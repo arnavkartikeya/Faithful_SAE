@@ -24,7 +24,10 @@ This creates interpretable, ablatable components that can be selectively removed
 
 Successfully demonstrated parameter decomposition on the 5-2 superposition toy model, decomposing the weight matrix into 5 distinct components with excellent reconstruction fidelity.
 
-![Greedy Matching Results](faithful_sae_best/figures/greedy_matching.png)
+<div align="center">
+  <img src="faithful_sae_best/figures/greedy_matching.png" width="45%" alt="Greedy Matching Results"/>
+  <img src="faithful_sae_best/figures/greedy_match_apd.png" width="45%" alt="Comparison with APD"/>
+</div>
 
 ### Colorized-MNIST Debiasing
 
@@ -33,7 +36,7 @@ Tested on spurious correlation removal in colorized-MNIST, where models learn to
 - Digits 5-9 with green backgrounds
 
 **Results:**
-- **+34.3% worst-group accuracy improvement** when ablating bias components (scaled ablation over different alphas graphed below)
+- **+34.3% worst-group accuracy improvement** when ablating bias components
 - Systematic debiasing across all demographic groups
 - Zero computational overhead during inference
 
