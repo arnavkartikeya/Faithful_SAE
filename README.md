@@ -38,8 +38,8 @@ Tested on spurious correlation removal in colorized-MNIST, where models learn to
 - Zero computational overhead during inference
 
 <div align="center">
-  <img src="Faithful_SAE/faithful_sae_best/figures/worst_group_acc.png" width="45%" alt="Worst Group Accuracy"/>
-  <img src="Faithful_SAE/faithful_sae_best/figures/debiasing_res.png" width="45%" alt="Debiasing Results"/>
+  <img src="faithful_sae_best/figures/worst_group_acc.png" width="45%" alt="Worst Group Accuracy"/>
+  <img src="faithful_sae_best/figures/debiasing_res.png" width="45%" alt="Debiasing Results"/>
 </div>
 
 ## 🛠️ Getting Started
