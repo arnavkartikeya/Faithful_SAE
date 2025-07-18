@@ -26,7 +26,6 @@ Successfully demonstrated parameter decomposition on the 5-2 superposition toy m
 
 <div align="center">
   <img src="faithful_sae_best/figures/greedy_matching.png" width="45%" alt="Greedy Matching Results"/>
-  <img src="faithful_sae_best/figures/greedy_match_apd.png" width="45%" alt="Comparison with APD"/>
 </div>
 
 ### Colorized-MNIST Debiasing
