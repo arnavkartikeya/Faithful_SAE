@@ -1,0 +1,17 @@
+batch_size: 2048
+concept_dim: 5
+create_dir: true
+epochs_ae: 10000
+input_dim: 5
+k: 1
+lam_faith: 1.0
+lam_recon: 10.0
+latent_dim: 2
+lr_ae: 0.001
+lr_sae: 0.001
+out_dir: runs
+run_name: 20250710-221658_in5_c5_lat2_seed1483060847
+save_dir: runs/20250710-221658_in5_c5_lat2_seed1483060847
+seed: 1483060847
+sparsity_p: 0.05
+steps_sae: 50000
