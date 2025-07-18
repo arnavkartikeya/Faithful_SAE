@@ -24,7 +24,7 @@ This creates interpretable, ablatable components that can be selectively removed
 
 Successfully demonstrated parameter decomposition on the 5-2 superposition toy model, decomposing the weight matrix into 5 distinct components with excellent reconstruction fidelity.
 
-![Greedy Matching Results](Faithful_SAE/faithful_sae_best/figures/greedy_matching.png)
+![Greedy Matching Results](faithful_sae_best/figures/greedy_matching.png)
 
 ### Colorized-MNIST Debiasing
 
