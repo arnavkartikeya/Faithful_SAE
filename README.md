@@ -37,10 +37,11 @@ Tested on spurious correlation removal in colorized-MNIST, where models learn to
 - Systematic debiasing across all demographic groups
 - Zero computational overhead during inference
 
-<div align="center">
-  <img src="faithful_sae_best/figures/worst_group_acc.png" width="45%" alt="Worst Group Accuracy"/>
-  <img src="faithful_sae_best/figures/debiasing_res.png" width="45%" alt="Debiasing Results"/>
-</div>
+**Worst Group Performance (Fairness Metric):**
+![Worst Group Accuracy](faithful_sae_best/figures/worst_group_acc.png)
+
+**Detailed Results Across All Groups:**
+![Debiasing Results](faithful_sae_best/figures/debiasing_res.png)
 
 ## 🛠️ Getting Started
 
