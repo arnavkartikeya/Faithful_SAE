@@ -22,10 +22,11 @@ This creates interpretable, ablatable components that can be selectively removed
 
 ### Toy Model Validation
 
-Successfully demonstrated parameter decomposition on the 5-2 superposition toy model, decomposing the weight matrix into 5 distinct components with excellent reconstruction fidelity.
+Successfully demonstrated parameter decomposition on the 5-2 superposition toy model, decomposing the weight matrix into 5 distinct components with excellent reconstruction fidelity. Left image is Faithful-SAE result, right is APD. 
 
 <div align="center">
   <img src="faithful_sae_best/figures/greedy_matching.png" width="45%" alt="Greedy Matching Results"/>
+  <img src="faithful_sae_best/figures/greedy_match_spd.png" width="45%" alt="Greedy Matching Results"/>
 </div>
 
 ### Colorized-MNIST Debiasing
