@@ -1,0 +1,15 @@
+ae_lr: 0.001
+batch_size: 512
+cnn_epochs: 15
+concepts: 1024
+cond_lam: 3.0
+decorr_lam: 0.05
+device: cuda
+faithful_lam: 2.0
+k: 32
+l1_lam: 0.1
+output_dir: training_run_artifacts
+recon_lam: 2.0
+sae_lr: 0.001
+sae_steps: 40000
+seed: 42
