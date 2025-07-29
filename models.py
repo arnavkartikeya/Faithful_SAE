@@ -21,6 +21,7 @@ class ToySuperpositionAE(nn.Module):
         out = h @ self.encoder_weights.T + self.decoder_bias
         return F.relu(out)
         
+
 class Faithful_SAE(nn.Module): 
     def __init__(self, input_dim, latent_dim, hidden_dim, k=1, use_topk=True):
         super().__init__()
@@ -31,17 +32,20 @@ class Faithful_SAE(nn.Module):
         self.decoder = nn.Parameter(torch.empty(latent_dim, hidden_dim))
         nn.init.xavier_normal_(self.decoder) 
     
+    def component(self, idx):
+        encoder_vector = self.encoder[:, idx]
+        decoder_vector = self.decoder[idx, :]
+        
+        return torch.outer(encoder_vector, decoder_vector)
+
     def components(self):
-        a = self.encoder 
-        b = self.decoder
-        P = torch.einsum('ic, ch -> cih', a, b)
-        return P 
+        return torch.einsum('ic, ch -> cih', self.encoder, self.decoder)
     
     def effective_encoder(self):
-        return self.components().sum(dim=0)
+        return self.encoder @ self.decoder
     
     def encode(self, x, use_topk=True):
-        latent = torch.einsum('bi,il->bl', x, self.encoder)
+        latent = x @ self.encoder
         
         if use_topk:
             vals, idx = latent.topk(self.k, dim=1)
@@ -52,13 +56,13 @@ class Faithful_SAE(nn.Module):
         return sparse
     
     def forward(self, x): 
-        latent = torch.einsum('bi,il->bl', x, self.encoder) 
+        latent = x @ self.encoder 
         
         if self.use_topk:
             vals, idx = latent.topk(self.k, dim=1)
             sparse = torch.zeros_like(latent).scatter_(1, idx, vals)
         else:
             sparse = latent
-            
-        h = torch.einsum('bl,lh->bh', sparse, self.decoder)  
-        return h , sparse 
+        
+        reconstructed_output = sparse @ self.decoder  
+        return reconstructed_output, sparse
