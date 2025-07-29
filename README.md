@@ -36,7 +36,8 @@ Tested on spurious correlation removal in colorized-MNIST, where models learn to
 - Digits 5-9 with green backgrounds
 
 **Results:**
-- **+34.3% worst-group accuracy improvement** when ablating bias components
+- **+30.4% worst-group accuracy improvement** when ablating bias components
+- ***11.2% increase in overall accuracy***
 - Systematic debiasing across all demographic groups
 - Zero computational overhead during inference
 
