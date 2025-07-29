@@ -26,7 +26,7 @@ Successfully demonstrated parameter decomposition on the 5-2 superposition toy m
 
 <div align="center">
   <img src="faithful_sae_best/figures/hungarian_5_2_figure_apd.png" width="45%" alt="APD l2 Results"/>
-  <img src="faithful_sae_best/figures/top_component_l2_5_2.png" width="45%" alt="Faithful-SAE l2 Results"/>
+  <img src="faithful_sae_best/figures/hungarian_5_2_figure_sae.png" width="45%" alt="Faithful-SAE l2 Results"/>
 </div>
 
 ### Colorized-MNIST Debiasing
