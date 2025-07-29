@@ -19,7 +19,7 @@ from torch.utils.data import DataLoader
 
 from models import ColorMNISTCNN
 from data import BiasedColorizedMNIST, UnbiasedColorizedMNIST, CNNActivationDatasetWithColors, ProbBiasedColorizedMNIST
-from train_models import train_model, train_cnn_sae_with_color_conditioning
+from train_models import train_model, train_cnn_sae_with_color_and_decorr
 from data import create_biased_dataset, create_unbiased_dataset, create_prob_biased_dataset
 from torch.utils.data import random_split
 from collections import defaultdict
@@ -32,8 +32,8 @@ class TrainingConfig:
     cond_lam: float = 3.0
     sae_lr: float = 1e-3
     concepts: int = 1024
-    k: int = 32
-    decorr_lam: float = 0.05
+    k: int = 1024
+    decorr_lam: float = 0.00
     
     seed: int = 42
     device: str = 'cuda'
@@ -126,7 +126,7 @@ if __name__ == "__main__":
     param_dict = asdict(config)
     
     print("\n--- 🚀 Starting SAE Training ---")
-    train_cnn_sae_with_color_conditioning(
+    train_cnn_sae_with_color_and_decorr(
         sae=sae_model,
         dataset=activation_dataset,
         target_weights=target_weights,
@@ -136,6 +136,16 @@ if __name__ == "__main__":
         batch_size=config.batch_size,
         params=param_dict,
     )
+    # train_cnn_sae_with_color_conditioning(
+    #     sae=sae_model,
+    #     dataset=activation_dataset,
+    #     target_weights=target_weights,
+    #     device=device,
+    #     steps=config.sae_steps,
+    #     lr=config.sae_lr,
+    #     batch_size=config.batch_size,
+    #     params=param_dict,
+    # )
 #     train_cnn_sae_with_color_conditioning(
 #         sae=sae_model,
 #         dataset=activation_dataset,
